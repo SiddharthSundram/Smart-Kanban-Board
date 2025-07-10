@@ -1,0 +1,71 @@
+smart-kanban-board/
+├── index.php
+├── config/
+│   └── config.php
+├── database/
+│   └── schema.sql
+├── auth/
+│   ├── login.php
+│   ├── logout.php
+│   ├── register.php
+│   ├── reset_password.php
+│   ├── update_password.php
+│   ├── profile.php
+│   └── auth_middleware.php 
+├── email/
+│   └── email_sender.php
+├── dashboard/
+│   ├── index.php 
+│   ├── boards/
+│   │   ├── list.php
+│   │   ├── create.php
+│   │   ├── view.php
+│   │   ├── edit.php
+│   │   └── delete.php
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── dashboard.css 
+│   │   └── js/
+│   │       └── dashboard.js
+├── boards/
+│   ├── create_board.php
+│   ├── get_boards.php
+│   ├── update_board.php
+│   ├── delete_board.php
+│   └── share_board.php
+├── columns/
+│   ├── create_column.php
+│   ├── update_column.php
+│   ├── reorder_columns.php
+│   ├── delete_column.php
+│   └── set_wip_limit.php
+|
+|
+├── realtime/
+│   └── poll_updates.php                         New polling backend endpoint  refresh page in every 60 seconds
+|
+├── tasks/
+│   ├── create_task.php
+│   ├── update_task.php
+│   ├── delete_task.php
+│   ├── move_task.php
+│   ├── get_tasks.php
+│   ├── upload_attachment.php
+│   └── task_activity_log.php
+├── cards/
+│   └── move_card.php
+├── analytics/
+│   ├── dashboard_data.php
+│   └── charts/
+│       ├── burn_down_chart.php
+│       ├── pie_by_priority.php
+│       └── timeline_view.php
+├── notifications/
+│   ├── notify.php
+│   └── get_notifications.php
+├── assets/
+│   ├── css/
+│   │   └── tailwind.css
+│   ├── js/
+│   │   └── main.js
+│   └── images/

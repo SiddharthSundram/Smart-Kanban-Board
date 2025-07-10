@@ -1,0 +1,4 @@
+/* Add Tailwind via CDN or @tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
