@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php'; // Or wherever PHPMailer is located
+require '../vendor/autoload.php';
 
 function sendPasswordResetEmail($to, $token) {
     $mail = new PHPMailer(true);

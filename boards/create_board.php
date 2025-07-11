@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 2. Add default columns with color and is_archived set
     $defaultColumns = ['To Do', 'In Progress', 'Testing', 'Done'];
     $position = 1;
-    $defaultColor = '#ffffff'; // white background
-    $defaultArchived = 0; // not archived
+    $defaultColor = '#ffffff'; 
+    $defaultArchived = 0; 
     $defaultWip = null;
 
     $stmt = $db->prepare("INSERT INTO columns (board_id, name, position, color, is_archived, wip_limit) VALUES (?, ?, ?, ?, ?, ?)");

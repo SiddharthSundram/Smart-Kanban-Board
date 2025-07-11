@@ -27,7 +27,7 @@ if (!empty($_GET['search']) || !empty($_GET['priority']) || !empty($_GET['label'
     WHERE b.owner_id = ?
   ";
 
-  $params[] = $_SESSION['user_id']; // Required again for subquery
+  $params[] = $_SESSION['user_id']; 
 
   if (!empty($_GET['search'])) {
     $boardsSql .= " AND t.title LIKE ?";
@@ -72,10 +72,6 @@ $boards = $stmt->fetchAll();
     <div class="space-x-4 flex items-center">
       <a href="../auth/profile.php" class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-800 transition">👤 Profile</a>
 
-      <!-- Archive Board Navigation -->
-      <!-- <a href="index.php" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">📂 Active Boards</a>
-      <a href="index.php?archived=1" class="px-4 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700">🗃️ Archived Boards</a> -->
-
 
       <!-- Notification -->
       <div class="relative">
@@ -102,7 +98,6 @@ $boards = $stmt->fetchAll();
   <!-- Boards Section -->
 
   <!-- Filters Section -->
-  <!-- 🔍 Filter UI -->
   <!-- 🔍 Filter UI -->
   <div class="bg-white rounded shadow p-4 mb-6">
     <form method="GET" class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -281,7 +276,7 @@ $boards = $stmt->fetchAll();
       const list = document.getElementById('notificationList');
       const badge = document.getElementById('notifBadge');
 
-      console.log('User Notifications:', notifications); // ✅ Check if it logs
+      console.log('User Notifications:', notifications); 
 
       list.innerHTML = '';
       badge.classList.toggle('hidden', notifications.length === 0);

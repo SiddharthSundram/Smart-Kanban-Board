@@ -104,7 +104,7 @@ if ($attachmentPath) {
 
 if ($stmt->execute()) {
 
-    // 🔔 Notify newly assigned users
+    //  Notify newly assigned users
     $new_assignees = explode(',', $assignee_ids);
     $just_assigned = array_diff($new_assignees, $old_assignees);
 
@@ -120,7 +120,7 @@ if ($stmt->execute()) {
         ]);
     }
 
-    // 🔄 Notify movement if column changed
+    //  Notify movement if column changed
     $stmtCol = $pdo->prepare("SELECT c.name FROM tasks t JOIN columns c ON t.column_id = c.id WHERE t.id = ?");
     $stmtCol->execute([$task_id]);
     $new_column = $stmtCol->fetchColumn();

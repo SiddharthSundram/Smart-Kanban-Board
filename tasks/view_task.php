@@ -22,7 +22,7 @@ if (!$task) die("Task not found");
 $users = $pdo->query("SELECT id, full_name FROM users")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!-- ✅ Modal Wrapper -->
+<!--  Modal Wrapper -->
 <div class="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center">
   <div class="bg-white p-6 rounded shadow w-full max-w-screen-lg h-auto max-h-[90vh] overflow-y-auto relative">
 
@@ -130,9 +130,9 @@ $users = $pdo->query("SELECT id, full_name FROM users")->fetchAll(PDO::FETCH_ASS
         </div>
 
         <!-- Subtasks Placeholder -->
-        <div class="col-span-2">
+        <!-- <div class="col-span-2">
           <div class="bg-gray-100 text-sm p-3 rounded">✅ Subtasks will be shown here with progress bar (soon).</div>
-        </div>
+        </div> -->
       </div>
 
       <!-- Buttons -->
@@ -172,7 +172,7 @@ function toggleCoverInput(type) {
 </script>
 <script>
 document.querySelector('#taskUpdateForm').addEventListener('submit', function (e) {
-  e.preventDefault(); // ❗️Important: stops default form submission
+  e.preventDefault(); 
 
   const form = e.target;
   const formData = new FormData(form);

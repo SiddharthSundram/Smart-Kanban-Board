@@ -16,7 +16,7 @@ foreach ($tasks as $task) {
             $userId,
             json_encode([
                 'task_id' => $task['id'],
-                'board_id' => $task['column_id'], // adjust if needed
+                'board_id' => $task['column_id'],
                 'title' => $task['title']
             ])
         ]);

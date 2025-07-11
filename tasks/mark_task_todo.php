@@ -28,7 +28,7 @@ if (!$task) {
 $task_title = $task['title'];
 $board_id = $task['board_id'];
 
-// ✅ Find 'To Do' column in the board
+// Find 'To Do' column in the board
 $stmt = $pdo->prepare("SELECT id FROM columns WHERE board_id = ? AND LOWER(name) = 'to do' LIMIT 1");
 $stmt->execute([$board_id]);
 $todo_column_id = $stmt->fetchColumn();
@@ -37,11 +37,11 @@ if (!$todo_column_id) {
     die("No 'To Do' column found in this board.");
 }
 
-// ✅ Move task to 'To Do' column
+//  Move task to 'To Do' column
 $stmt = $pdo->prepare("UPDATE tasks SET column_id = ?, updated_at = NOW() WHERE id = ?");
 $stmt->execute([$todo_column_id, $task_id]);
 
-// ✅ Notify collaborators (excluding self)
+// Notify collaborators (excluding self)
 $stmt = $pdo->prepare("SELECT user_id FROM board_users WHERE board_id = ? AND user_id != ?");
 $stmt->execute([$board_id, $current_user]);
 $collaborators = $stmt->fetchAll(PDO::FETCH_COLUMN);
@@ -56,5 +56,5 @@ foreach ($collaborators as $user_id) {
     ]);
 }
 
-// ✅ Redirect to board view
+//  Redirect to board view
 redirect("../dashboard/boards/view.php?id=$board_id");

@@ -22,7 +22,7 @@ $board_id = $board['board_id'];
 // ✅ Now delete the task
 $stmt = $pdo->prepare("DELETE FROM tasks WHERE id = ?");
 if ($stmt->execute([$task_id])) {
-    header("Location: ../dashboard/boards/view.php?id=" . $board_id); // ✅ Redirect to correct board
+    header("Location: ../dashboard/boards/view.php?id=" . $board_id); 
     exit;
 } else {
     die("Failed to delete task");

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $token = bin2hex(random_bytes(32));
-    $expires_at = date('Y-m-d H:i:s', time() + 3600); // 1 hour
+    $expires_at = date('Y-m-d H:i:s', time() + 3600); 
 
     $stmt = $pdo->prepare("INSERT INTO password_reset_tokens (user_id, token, expires_at) VALUES (?, ?, ?)");
     $stmt->execute([$user['id'], $token, $expires_at]);
@@ -32,10 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';  // ✅ Or your SMTP provider
+        $mail->Host = 'smtp.gmail.com';  
         $mail->SMTPAuth = true;
-        $mail->Username = 'your@gmail.com';  // ✅ Replace with your real email
-        $mail->Password = 'your_app_password'; // ✅ App-specific password if Gmail
+        $mail->Username = 'your@gmail.com';  
+        $mail->Password = 'your_app_password'; 
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 

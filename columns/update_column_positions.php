@@ -1,7 +1,7 @@
 <?php
 require_once '../auth/auth_middleware.php';
 require_once '../config/database.php';
-require_once '../utils/helpers.php'; // for json_response()
+require_once '../utils/helpers.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);

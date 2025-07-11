@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!-- Simple login form using Tailwind CSS -->
-<!-- Simple login form using Tailwind CSS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

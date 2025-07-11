@@ -365,7 +365,7 @@ $highlightTask = $_GET['highlight_task'] ?? null;
             .then(data => {
               if (data.updated) {
                 console.log('🔁 Board changed. Reloading...');
-                location.reload(); // or use a smarter update mechanism
+                location.reload();
               }
               lastFetch = data.timestamp;
             })
@@ -378,7 +378,7 @@ $highlightTask = $_GET['highlight_task'] ?? null;
 
         new Sortable(document.getElementById('column-container'), {
           animation: 150,
-          handle: '.column-handle', // Optional: Add a handle span in HTML
+          handle: '.column-handle', 
           onEnd: function(evt) {
             const columns = document.querySelectorAll('#column-container > div');
             const positions = [];

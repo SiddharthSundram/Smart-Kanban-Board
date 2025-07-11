@@ -6,7 +6,7 @@ require_once '../utils/helpers.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $board_id = $_POST['board_id'];
     $name = sanitize($_POST['name']);
-    $color = $_POST['color'] ?? '#ffffff'; // 🎨 Default color
+    $color = $_POST['color'] ?? '#ffffff'; 
     $wip_limit = isset($_POST['wip_limit']) && is_numeric($_POST['wip_limit']) ? intval($_POST['wip_limit']) : null;
 
     // Get next position

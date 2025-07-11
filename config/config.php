@@ -4,8 +4,8 @@
 // ✅ Define database constants for use in database.php
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'kanban_db');
-define('DB_USER', 'root');      // Change if your MySQL has a different username
-define('DB_PASS', '');          // Change if your MySQL has a password
+define('DB_USER', 'root');     
+define('DB_PASS', '');          
 
 // ✅ Optional: create a PDO instance here too if needed globally
 try {

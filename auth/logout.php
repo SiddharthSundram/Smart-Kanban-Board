@@ -1,6 +1,6 @@
 <?php
 require_once '../config/config.php';
-require_once '../utils/helpers.php'; // ✅ Add this to define redirect()
+require_once '../utils/helpers.php'; 
 
 session_start();
 session_unset();

@@ -1,5 +1,5 @@
 <?php
-// smart-kanban-board/boards/reorder_boards.php
+
 
 require_once '../auth/auth_middleware.php';
 require_once '../config/config.php';

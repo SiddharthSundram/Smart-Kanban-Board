@@ -2,7 +2,7 @@
 require_once '../config/config.php';
 require_once '../auth/auth_middleware.php';
 require_once '../utils/helpers.php';
-require_once '../utils/notify.php'; // ✅ For notification system
+require_once '../utils/notify.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = sanitize($_POST['title']);
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("INSERT INTO tasks (column_id, title, description, priority, due_date, created_by) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->execute([$column_id, $title, $description, $priority, $due_date, $created_by]);
 
-    $task_id = $pdo->lastInsertId(); // ✅ Get newly created task ID
+    $task_id = $pdo->lastInsertId();
 
     // ✅ Notify all collaborators except the creator
     $stmt = $pdo->prepare("SELECT user_id FROM board_users WHERE board_id = ? AND user_id != ?");
